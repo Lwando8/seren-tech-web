@@ -9,6 +9,15 @@ export const siteConfig = {
   locale: "en_ZA",
 } as const;
 
+export const whoWeWorkWith = {
+  title: "Who we work with",
+  description:
+    "Seren Tech works with organisations that need clearer workflows, faster communication, and better visibility across daily operations. Whether teams are managing customer interactions, internal processes, service requests, or time-sensitive updates, we help create systems that make the next step clear.",
+} as const;
+
+export const serenNudgeAudience =
+  "Seren Nudge is designed for environments where people place requests, wait for updates, and need a clear signal when something is ready.";
+
 export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/seren-nudge", label: "Seren Nudge" },
@@ -31,7 +40,7 @@ export const whySerenTech = [
   {
     title: "Built for practical environments",
     description:
-      "Systems designed for queues, counters, events, and front-line teams — not abstract dashboards.",
+      "Systems designed for queues, counters, and front-line teams — not abstract dashboards.",
   },
   {
     title: "South African operational realities",

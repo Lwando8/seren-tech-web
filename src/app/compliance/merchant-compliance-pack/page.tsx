@@ -134,13 +134,17 @@ export default function MerchantCompliancePackPage() {
 
       <h2>Pricing Summary</h2>
       <p>
-        <strong>Free:</strong>
+        <strong>Free Trial:</strong>
         <br />
-        R0/month
+        Complimentary for new businesses
         <br />
-        250 QR scans/month
+        250 QR scans
         <br />
-        50 menu orders/month
+        50 menu orders
+        <br />
+        Full platform access
+        <br />
+        Up to 30 days (whichever limit is reached first)
       </p>
       <p>
         <strong>Starter:</strong>

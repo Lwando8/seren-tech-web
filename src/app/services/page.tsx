@@ -30,7 +30,7 @@ export default function ServicesPage() {
         <SectionHeader
           eyebrow="What we offer"
           title="From idea to working system"
-          description="We bring the same practical mindset from our product ecosystem to custom engagements — focused on clarity, usability, and real-world deployment."
+          description="We bring the same practical mindset from our product work to custom engagements — focused on clarity, usability, and real-world deployment."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2">
           {servicesPageItems.map((service, index) => (

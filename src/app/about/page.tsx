@@ -28,8 +28,8 @@ export default function AboutPage() {
       <section className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="space-y-6 text-lg leading-relaxed text-muted">
           <p>
-            We build for the environments where things actually happen — front counters, estate
-            gates, event floors, security rooms, and community spaces. Our products are designed to
+            We build for the environments where things actually happen — front counters, service
+            desks, busy floors, and teams coordinating under pressure. Our products are designed to
             reduce friction, improve visibility, and help people coordinate without unnecessary
             complexity.
           </p>
@@ -61,7 +61,7 @@ export default function AboutPage() {
             {[
               {
                 title: "Operational clarity",
-                text: "Everyone knows the current state — orders, visitors, incidents, or tasks.",
+                text: "Everyone knows the current state — requests, tasks, orders, or service updates.",
               },
               {
                 title: "Timely communication",
@@ -80,8 +80,8 @@ export default function AboutPage() {
                 text: "Built with South African operational realities in mind.",
               },
               {
-                title: "Connected ecosystem",
-                text: "Products that can grow together rather than exist in isolation.",
+                title: "Scalable foundations",
+                text: "Systems designed to grow as your operational needs evolve.",
               },
             ].map((item) => (
               <div key={item.title} className="rounded-2xl border border-border bg-background p-6">

@@ -4,7 +4,7 @@ import { Hero } from "@/components/ui/Hero";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { homepageServices } from "@/lib/services";
-import { whySerenTech } from "@/lib/site";
+import { serenNudgeAudience, whySerenTech } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -25,7 +25,7 @@ export default function HomePage() {
           id="now-testing-heading"
           eyebrow="Now testing"
           title="Seren Nudge"
-          description="Queue, order, QR, pickup, and ready-alert workflows for businesses and customer-facing environments."
+          description="Queue, order, QR, pickup, and ready-alert workflows for teams that need clearer customer communication."
         />
         <div className="mt-12 rounded-3xl border border-border bg-surface p-8 sm:p-12">
           <div className="grid items-center gap-10 lg:grid-cols-2">
@@ -37,8 +37,8 @@ export default function HomePage() {
                 Queue, order, and pickup communication made simpler.
               </h3>
               <p className="mt-4 leading-relaxed text-muted">
-                Seren Nudge helps businesses manage customer orders, QR flows, ready alerts, and
-                pickup communication from one simple operational layer.
+                {serenNudgeAudience} Seren Nudge helps teams manage requests, QR flows, ready alerts,
+                and pickup communication from one simple operational layer.
               </p>
               <Link
                 href="/seren-nudge"
@@ -132,8 +132,7 @@ export default function HomePage() {
               />
               <p className="mt-6 text-muted leading-relaxed">
                 Seren Tech is a South African technology company building practical software for
-                business operations, customer communication, and everyday workflow clarity — for
-                businesses, events, and communities.
+                business operations, customer communication, and everyday workflow clarity.
               </p>
               <Link
                 href="/about"
@@ -161,7 +160,7 @@ export default function HomePage() {
 
       <CTASection
         title="Let's talk about your environment"
-        description="Whether you run a café, manage a venue, or organise events — we'd like to hear what you're building, managing, or trying to improve."
+        description="Tell us about your organisation and the operational challenges you're trying to improve."
         primaryLabel="Get in touch"
         primaryHref="/contact"
       />

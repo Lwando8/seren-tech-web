@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { Hero } from "@/components/ui/Hero";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, whoWeWorkWith } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -64,14 +65,24 @@ export default function ContactPage() {
             </div>
 
             <div className="mt-6 rounded-2xl border border-border bg-background p-8">
-              <h3 className="font-semibold text-charcoal">Who we work with</h3>
-              <ul className="mt-4 space-y-2 text-sm text-muted">
-                <li>Businesses and food outlets</li>
-                <li>Estates and residential communities</li>
-                <li>Churches and event organisers</li>
-                <li>Venues and carwashes</li>
-                <li>Community and safety organisations</li>
-              </ul>
+              <h3 className="font-semibold text-charcoal">Testing Seren Nudge?</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                For controlled testing access, use the dedicated request form — we&apos;ll follow
+                up with setup instructions if your environment is a good fit.
+              </p>
+              <Link
+                href="/seren-nudge/request-access"
+                className="mt-4 inline-flex text-sm font-semibold text-coral transition-colors hover:text-coral-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral"
+              >
+                Request access to Seren Nudge &rarr;
+              </Link>
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-border bg-background p-8">
+              <h3 className="font-semibold text-charcoal">{whoWeWorkWith.title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-muted">
+                {whoWeWorkWith.description}
+              </p>
             </div>
           </aside>
         </div>

@@ -12,8 +12,7 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <Logo variant="dark" size="footer" className="mb-4" />
             <p className="max-w-xs text-sm leading-relaxed text-white/70">
-              Practical technology for businesses, estates, events, and communities across South
-              Africa.
+              {siteConfig.description} Based in South Africa.
             </p>
           </div>
 

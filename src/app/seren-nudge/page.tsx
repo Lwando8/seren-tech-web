@@ -4,16 +4,16 @@ import { CTASection } from "@/components/ui/CTASection";
 import { Hero } from "@/components/ui/Hero";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getAvailableSerenNudgeScreenshots } from "@/lib/seren-nudge-screenshots";
-import { siteConfig } from "@/lib/site";
+import { serenNudgeAudience, siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Seren Nudge",
   description:
-    "Seren Nudge helps businesses manage customer orders, QR flows, ready alerts, and pickup communication from one simple operational layer.",
+    "Seren Nudge helps teams manage requests, QR flows, ready alerts, and pickup communication from one simple operational layer.",
   openGraph: {
     title: `Seren Nudge | ${siteConfig.name}`,
     description:
-      "Queue, order, and pickup communication made simpler. Now testing with businesses and customer-facing environments.",
+      "Queue, order, and pickup communication made simpler. Now in controlled testing.",
   },
 };
 
@@ -53,18 +53,17 @@ export default function SerenNudgePage() {
         eyebrow="Now testing"
         title="Seren Nudge"
         description="Queue, order, and pickup communication made simpler."
-        primaryCta={{ href: "/contact", label: "Request access" }}
+        primaryCta={{ href: "/seren-nudge/request-access", label: "Request access" }}
         secondaryCta={{ href: "/contact", label: "Contact Seren Tech" }}
       />
 
       <section className="mx-auto max-w-3xl px-5 py-16 sm:px-8 sm:py-20">
-        <p className="text-lg leading-relaxed text-muted sm:text-xl">
-          Seren Nudge helps businesses manage customer orders, QR flows, ready alerts, and pickup
-          communication from one simple operational layer.
-        </p>
+        <p className="text-lg leading-relaxed text-muted sm:text-xl">{serenNudgeAudience}</p>
         <p className="mt-5 leading-relaxed text-muted">
-          Customers can scan, track, or receive updates through supported channels, while
-          businesses manage active orders, pickup readiness, and collection from a clean dashboard.
+          Seren Nudge helps teams manage requests, QR flows, ready alerts, and pickup communication
+          from one simple operational layer. Customers can scan, track, or receive updates through
+          supported channels, while teams manage active requests, pickup readiness, and collection
+          from a clean dashboard.
         </p>
       </section>
 
@@ -77,7 +76,7 @@ export default function SerenNudgePage() {
             id="features-heading"
             eyebrow="What it does"
             title="One simple operational layer"
-            description="Practical workflows for busy counters, queues, and customer-facing environments."
+            description="Practical workflows for teams that need clearer request handling, status updates, and pickup communication."
           />
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
@@ -125,9 +124,9 @@ export default function SerenNudgePage() {
 
       <CTASection
         title="Interested in testing Seren Nudge?"
-        description="We're working with a small group of businesses during testing. Tell us about your environment and we'll be in touch."
+        description="We're working with a small group of organisations during testing. Tell us about your environment and we'll be in touch."
         primaryLabel="Request access"
-        primaryHref="/contact"
+        primaryHref="/seren-nudge/request-access"
       />
     </>
   );

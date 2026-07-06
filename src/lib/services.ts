@@ -20,19 +20,14 @@ export const homepageServices: Service[] = [
       "Mobile and web applications tailored to your operational environment and team.",
   },
   {
-    title: "Access and safety systems",
+    title: "Operational communication",
     description:
-      "Visitor flows, identity capture, panic response, and security coordination tools.",
+      "Status updates, queue management, and on-site coordination for busy teams.",
   },
   {
-    title: "Event and venue technology",
+    title: "Team and stakeholder visibility",
     description:
-      "Vendor ordering, queue management, and on-site communication for events and venues.",
-  },
-  {
-    title: "Residential and community platforms",
-    description:
-      "Estate management, resident communication, and operational dashboards.",
+      "Dashboards and communication layers that keep people aligned on what needs to happen next.",
   },
 ];
 
@@ -45,7 +40,7 @@ export const servicesPageItems: Service[] = [
   {
     title: "Mobile app development",
     description:
-      "Native and cross-platform apps for field teams, residents, vendors, and responders.",
+      "Native and cross-platform apps for field teams, customers, and operators.",
   },
   {
     title: "Web dashboards",
@@ -58,19 +53,19 @@ export const servicesPageItems: Service[] = [
       "Scalable backends with real-time data, authentication, and cloud functions.",
   },
   {
-    title: "Access control and visitor workflows",
+    title: "Access and visitor workflows",
     description:
-      "Digital check-in, identity verification, and gate-level coordination.",
+      "Digital check-in, identity verification, and coordinated handoffs at entry points.",
   },
   {
-    title: "Event technology and vendor systems",
+    title: "On-site operations and queue systems",
     description:
-      "QR ordering, vendor management, and customer notification flows for events.",
+      "QR flows, status updates, and customer notification for busy operational environments.",
   },
   {
-    title: "Safety and response platforms",
+    title: "Integration and workflow connectivity",
     description:
-      "SOS alerts, location sharing, and responder coordination tools.",
+      "Connect existing tools and data sources into coherent operational workflows.",
   },
   {
     title: "Product ecosystem consulting",

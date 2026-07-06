@@ -28,10 +28,11 @@ export default function BusinessTermsPage() {
       </p>
 
       <h2>2. Subscription Plans</h2>
-      <p>Seren Nudge offers the following subscription plans:</p>
+      <p>Seren Nudge offers the following plans:</p>
       <ul>
         <li>
-          <strong>Free:</strong> R0/month — 250 QR scans/month, 50 menu orders/month
+          <strong>Free Trial:</strong> Complimentary trial — 250 QR scans, 50 menu orders, full
+          platform access, up to 30 days (whichever limit is reached first)
         </li>
         <li>
           <strong>Starter:</strong> R599/month — 3,500 QR scans/month, 750 menu orders/month
@@ -41,8 +42,9 @@ export default function BusinessTermsPage() {
         </li>
       </ul>
       <p>
-        Pricing is subject to change with notice. Businesses will be notified before any price
-        increases take effect.
+        After the Free Trial ends, businesses must choose a paid subscription to continue accepting
+        customer orders. Pricing is subject to change with notice. Businesses will be notified
+        before any price increases take effect.
       </p>
 
       <h2>3. Payment Processing</h2>
