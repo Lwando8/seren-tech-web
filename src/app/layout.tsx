@@ -3,11 +3,11 @@ import { DM_Sans } from "next/font/google";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -68,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} h-full antialiased`}>
+    <html lang="en" className={cn(dmSans.className, "h-full antialiased")}>
       <body className="flex min-h-full flex-col">
         <a
           href="#main-content"
