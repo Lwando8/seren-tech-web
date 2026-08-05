@@ -16,26 +16,20 @@ function useHasMounted() {
 export function ModeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const mounted = useHasMounted();
-  const isDark = resolvedTheme === "dark";
+  // Default to dark before hydration so SSR + first paint match defaultTheme.
+  const isDark = !mounted || resolvedTheme !== "light";
 
   return (
     <Button
       type="button"
       variant="outline"
       size="icon"
-      className="size-9 shrink-0 rounded-full border-border bg-surface/80 shadow-soft"
-      aria-label={
-        mounted
-          ? isDark
-            ? "Switch to light mode"
-            : "Switch to dark mode"
-          : "Toggle theme"
-      }
-      disabled={!mounted}
+      className="size-9 shrink-0 rounded-full border-border bg-surface text-charcoal shadow-soft hover:bg-background"
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
-      {mounted && isDark ? <SunIcon data-icon /> : <MoonIcon data-icon />}
-      <span className="sr-only">Toggle theme</span>
+      {isDark ? <SunIcon data-icon /> : <MoonIcon data-icon />}
+      <span className="sr-only">{isDark ? "Switch to light mode" : "Switch to dark mode"}</span>
     </Button>
   );
 }

@@ -95,7 +95,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="relative border-t border-border bg-[linear-gradient(160deg,_var(--background)_0%,_#eef5f3_100%)] p-8 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
+            <div className="relative border-t border-border bg-gradient-to-br from-background to-teal-soft p-8 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
               {previewShots.length > 0 ? (
                 <div className="relative mx-auto flex max-w-sm items-end justify-center gap-4 sm:gap-5">
                   {previewShots.map((shot, index) => (

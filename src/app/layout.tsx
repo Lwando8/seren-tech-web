@@ -69,12 +69,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn(dmSans.className, "h-full antialiased")} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={cn(dmSans.className, "dark h-full antialiased")}
+      suppressHydrationWarning
+    >
       <body className="flex min-h-full flex-col">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem={false}
+          storageKey="seren-theme"
           disableTransitionOnChange
         >
           <a
