@@ -158,7 +158,7 @@ export function EventVendorPricingCard({
   href = "/contact",
 }: EventVendorPricingCardProps) {
   return (
-    <article className="flex h-full flex-col rounded-3xl border border-border bg-gradient-to-br from-charcoal to-charcoal-soft p-8 text-white shadow-[0_12px_40px_rgba(28,28,30,0.12)] sm:p-10">
+    <article className="flex h-full flex-col rounded-3xl border border-border bg-gradient-to-br from-ink to-charcoal-soft p-8 text-white shadow-[0_12px_40px_rgba(28,28,30,0.12)] sm:p-10">
       <p className="text-sm font-semibold uppercase tracking-widest text-gold">{subtitle}</p>
       <h3 className="mt-2 text-2xl font-semibold">{title}</h3>
       <p className="mt-3 text-sm leading-relaxed text-white/75">{description}</p>

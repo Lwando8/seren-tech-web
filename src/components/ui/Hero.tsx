@@ -29,7 +29,7 @@ export function Hero({
     <section
       className={`relative overflow-hidden ${
         dark
-          ? "bg-charcoal text-white"
+          ? "bg-ink text-white"
           : "bg-[radial-gradient(ellipse_at_top_right,_var(--teal-soft),_transparent_55%),linear-gradient(to_bottom,_var(--surface),_var(--background))]"
       }`}
     >

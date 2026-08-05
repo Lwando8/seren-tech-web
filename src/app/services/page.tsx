@@ -39,7 +39,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-charcoal text-white">
+      <section className="border-y border-border bg-ink text-white">
         <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
           <SectionHeader
             eyebrow="How we work"

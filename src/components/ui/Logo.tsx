@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
+import { cn } from "@/lib/utils";
 
 type LogoProps = {
-  variant?: "light" | "dark";
+  /** Force a specific asset. Omit to follow light/dark theme via CSS. */
+  variant?: "light" | "dark" | "auto";
   size?: "header" | "footer";
   className?: string;
   priority?: boolean;
@@ -15,27 +17,61 @@ const sizeClasses = {
 } as const;
 
 export function Logo({
-  variant = "light",
+  variant = "auto",
   size = "header",
   className = "",
   priority = false,
 }: LogoProps) {
-  const src = variant === "dark" ? "/images/logo-dark.png" : "/images/logo-light.png";
+  const sizeClass = sizeClasses[size];
 
   return (
     <Link
       href="/"
-      className={`inline-flex shrink-0 items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 ${className}`}
+      className={cn(
+        "inline-flex shrink-0 items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal focus-visible:ring-offset-2",
+        className,
+      )}
       aria-label={`${siteConfig.name} home`}
     >
-      <Image
-        src={src}
-        alt={`${siteConfig.name} logo`}
-        width={536}
-        height={713}
-        className={`${sizeClasses[size]} bg-transparent`}
-        priority={priority}
-      />
+      {variant === "light" ? (
+        <Image
+          src="/images/logo-light.png"
+          alt={`${siteConfig.name} logo`}
+          width={536}
+          height={713}
+          className={`${sizeClass} bg-transparent`}
+          priority={priority}
+        />
+      ) : variant === "dark" ? (
+        <Image
+          src="/images/logo-dark.png"
+          alt={`${siteConfig.name} logo`}
+          width={536}
+          height={713}
+          className={`${sizeClass} bg-transparent`}
+          priority={priority}
+        />
+      ) : (
+        <>
+          <Image
+            src="/images/logo-light.png"
+            alt={`${siteConfig.name} logo`}
+            width={536}
+            height={713}
+            className={`${sizeClass} bg-transparent dark:hidden`}
+            priority={priority}
+          />
+          <Image
+            src="/images/logo-dark.png"
+            alt=""
+            width={536}
+            height={713}
+            className={`${sizeClass} hidden bg-transparent dark:block`}
+            aria-hidden
+            priority={priority}
+          />
+        </>
+      )}
     </Link>
   );
 }

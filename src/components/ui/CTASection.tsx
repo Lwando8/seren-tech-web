@@ -17,7 +17,7 @@ export function CTASection({
   showEmail = true,
 }: CTASectionProps) {
   return (
-    <section className="bg-charcoal text-white">
+    <section className="bg-ink text-white">
       <div className="mx-auto max-w-6xl section-pad">
         <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-charcoal-soft px-8 py-14 shadow-soft sm:rounded-[2rem] sm:px-12 sm:py-16">
           <div

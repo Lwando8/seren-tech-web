@@ -14,7 +14,7 @@ export function BottomNav() {
       aria-hidden={false}
     >
       <nav
-        className="pointer-events-auto flex items-center gap-0.5 rounded-full border border-white/10 bg-charcoal/88 px-1.5 py-1.5 shadow-[0_12px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:gap-1 sm:px-2"
+        className="pointer-events-auto flex items-center gap-0.5 rounded-full border border-white/10 bg-ink/90 px-1.5 py-1.5 shadow-[0_12px_40px_rgba(0,0,0,0.28)] backdrop-blur-xl sm:gap-1 sm:px-2"
         aria-label="Primary navigation"
       >
         {bottomNavLinks.map((link) => {
@@ -26,7 +26,7 @@ export function BottomNav() {
               key={link.href}
               href={link.href}
               aria-current={active ? "page" : undefined}
-              className={`group relative flex min-w-[3.25rem] flex-col items-center justify-center rounded-full px-2.5 py-2 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal focus-visible:ring-offset-2 focus-visible:ring-offset-charcoal sm:min-w-[4.5rem] sm:px-3.5 ${
+              className={`group relative flex min-w-[3.25rem] flex-col items-center justify-center rounded-full px-2.5 py-2 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal focus-visible:ring-offset-2 focus-visible:ring-offset-ink sm:min-w-[4.5rem] sm:px-3.5 ${
                 active
                   ? "bg-white/12 text-white"
                   : "text-white/55 hover:bg-white/6 hover:text-white/90"

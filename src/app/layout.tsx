@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
@@ -68,20 +69,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn(dmSans.className, "h-full antialiased")}>
+    <html lang="en" className={cn(dmSans.className, "h-full antialiased")} suppressHydrationWarning>
       <body className="flex min-h-full flex-col">
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-charcoal focus:px-4 focus:py-2 focus:text-white"
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
         >
-          Skip to main content
-        </a>
-        <Header />
-        <main id="main-content" className="flex-1 pb-28">
-          {children}
-        </main>
-        <Footer />
-        <BottomNav />
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+          >
+            Skip to main content
+          </a>
+          <Header />
+          <main id="main-content" className="flex-1 pb-28">
+            {children}
+          </main>
+          <Footer />
+          <BottomNav />
+        </ThemeProvider>
       </body>
     </html>
   );

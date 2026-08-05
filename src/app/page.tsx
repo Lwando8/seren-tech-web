@@ -140,7 +140,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-charcoal text-white" aria-labelledby="think-heading">
+      <section className="bg-ink text-white" aria-labelledby="think-heading">
         <div className="mx-auto max-w-6xl section-pad">
           <SectionHeader
             id="think-heading"
