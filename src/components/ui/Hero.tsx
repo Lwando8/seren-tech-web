@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 type HeroProps = {
   eyebrow?: string;
@@ -7,6 +8,9 @@ type HeroProps = {
   primaryCta?: { href: string; label: string };
   secondaryCta?: { href: string; label: string };
   dark?: boolean;
+  /** Optional product visual (e.g. screenshot frame) */
+  visual?: ReactNode;
+  children?: ReactNode;
 };
 
 export function Hero({
@@ -16,68 +20,95 @@ export function Hero({
   primaryCta,
   secondaryCta,
   dark = false,
+  visual,
+  children,
 }: HeroProps) {
+  const hasVisual = Boolean(visual);
+
   return (
     <section
       className={`relative overflow-hidden ${
         dark
           ? "bg-charcoal text-white"
-          : "bg-gradient-to-b from-surface via-surface to-background"
+          : "bg-[radial-gradient(ellipse_at_top_right,_var(--teal-soft),_transparent_55%),linear-gradient(to_bottom,_var(--surface),_var(--background))]"
       }`}
     >
-      <div
-        className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-gold-soft blur-3xl"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-coral-soft blur-3xl"
-        aria-hidden="true"
-      />
+      {!dark && (
+        <>
+          <div
+            className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-teal-soft blur-3xl"
+            aria-hidden="true"
+          />
+          <div
+            className="pointer-events-none absolute -bottom-24 -left-16 h-64 w-64 rounded-full bg-coral-soft blur-3xl"
+            aria-hidden="true"
+          />
+        </>
+      )}
 
-      <div className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28 lg:py-32">
-        {eyebrow && (
-          <p
-            className={`mb-4 text-sm font-semibold uppercase tracking-widest ${
-              dark ? "text-gold" : "text-accent-teal"
+      <div
+        className={`relative mx-auto max-w-6xl section-pad ${
+          hasVisual
+            ? "grid items-center gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-16"
+            : ""
+        }`}
+      >
+        <div>
+          {eyebrow && (
+            <p
+              className={`mb-4 text-sm font-semibold uppercase tracking-[0.14em] ${
+                dark ? "text-accent-teal" : "text-deep-teal"
+              }`}
+            >
+              {eyebrow}
+            </p>
+          )}
+          <h1
+            className={`max-w-3xl font-semibold tracking-tight ${
+              hasVisual
+                ? "text-3xl leading-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.12]"
+                : "text-4xl leading-tight sm:text-5xl lg:text-[3.35rem] lg:leading-[1.08]"
             }`}
           >
-            {eyebrow}
+            {title}
+          </h1>
+          <p
+            className={`mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl ${
+              dark ? "text-white/70" : "text-muted"
+            }`}
+          >
+            {description}
           </p>
-        )}
-        <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-[3.25rem] lg:leading-[1.1]">
-          {title}
-        </h1>
-        <p
-          className={`mt-6 max-w-2xl text-lg leading-relaxed sm:text-xl ${
-            dark ? "text-white/75" : "text-muted"
-          }`}
-        >
-          {description}
-        </p>
 
-        {(primaryCta || secondaryCta) && (
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            {primaryCta && (
-              <Link
-                href={primaryCta.href}
-                className="inline-flex items-center justify-center rounded-full bg-coral px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-coral-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2"
-              >
-                {primaryCta.label}
-              </Link>
-            )}
-            {secondaryCta && (
-              <Link
-                href={secondaryCta.href}
-                className={`inline-flex items-center justify-center rounded-full border px-7 py-3.5 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 ${
-                  dark
-                    ? "border-white/20 text-white hover:border-white/40 hover:bg-white/5"
-                    : "border-border text-charcoal hover:border-charcoal/20 hover:bg-surface"
-                }`}
-              >
-                {secondaryCta.label}
-              </Link>
-            )}
-          </div>
+          {(primaryCta || secondaryCta) && (
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+              {primaryCta && (
+                <Link
+                  href={primaryCta.href}
+                  className="inline-flex items-center justify-center rounded-full bg-deep-teal px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition-all duration-200 hover:bg-coral-hover hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal focus-visible:ring-offset-2"
+                >
+                  {primaryCta.label}
+                </Link>
+              )}
+              {secondaryCta && (
+                <Link
+                  href={secondaryCta.href}
+                  className={`inline-flex items-center justify-center rounded-full border px-7 py-3.5 text-sm font-semibold transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal focus-visible:ring-offset-2 ${
+                    dark
+                      ? "border-white/20 text-white hover:border-white/40 hover:bg-white/5"
+                      : "border-border bg-surface/80 text-charcoal hover:border-deep-teal/25 hover:bg-surface"
+                  }`}
+                >
+                  {secondaryCta.label}
+                </Link>
+              )}
+            </div>
+          )}
+          {children}
+        </div>
+
+        {visual && (
+          <div className="relative mx-auto w-full max-w-md lg:max-w-none">{visual}</div>
         )}
       </div>
     </section>

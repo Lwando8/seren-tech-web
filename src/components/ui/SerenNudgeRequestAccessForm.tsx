@@ -12,7 +12,7 @@ const aboutOptions = [
 ] as const;
 
 const inputClassName =
-  "w-full rounded-xl border border-border bg-surface px-4 py-3 text-sm text-charcoal placeholder:text-muted-light focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20";
+  "w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-charcoal placeholder:text-muted-light transition-colors focus:border-deep-teal focus:outline-none focus:ring-2 focus:ring-accent-teal/25";
 
 export function SerenNudgeRequestAccessForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -48,27 +48,30 @@ export function SerenNudgeRequestAccessForm() {
 
   if (submitted) {
     return (
-      <div className="rounded-2xl border border-border bg-surface p-8 sm:p-10">
-        <p className="text-xl font-semibold text-charcoal">Request received</p>
+      <div className="rounded-2xl border border-border bg-background p-8 sm:p-10">
+        <p className="text-sm font-semibold uppercase tracking-[0.14em] text-deep-teal">
+          Request submitted
+        </p>
+        <p className="mt-3 text-xl font-semibold text-charcoal">Thank you — we&apos;ve got it</p>
         <p className="mt-4 leading-relaxed text-muted">
           Thanks — we&apos;ve received your Seren Nudge access request. If approved for testing,
           we&apos;ll send instructions to your email address. Please also check your spam or junk
           folder if you don&apos;t see the email.
         </p>
-        <p className="mt-4 text-sm leading-relaxed text-muted-light">
-          For iPhone testing, you may need Apple TestFlight installed before opening the invite
-          link.
+        <p className="mt-5 rounded-xl border border-accent-teal/25 bg-teal-soft/50 px-4 py-3 text-sm leading-relaxed text-muted">
+          For iPhone testing, install Apple TestFlight before opening the invite link from your
+          access email.
         </p>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-      <div className="grid gap-5 sm:grid-cols-2">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-6" noValidate>
+      <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="fullName" className="mb-1.5 block text-sm font-medium text-charcoal">
-            Full name <span className="text-coral">*</span>
+            Full name <span className="text-deep-teal">*</span>
           </label>
           <input
             id="fullName"
@@ -82,7 +85,7 @@ export function SerenNudgeRequestAccessForm() {
         </div>
         <div>
           <label htmlFor="company" className="mb-1.5 block text-sm font-medium text-charcoal">
-            Company / organisation name <span className="text-coral">*</span>
+            Company / organisation name <span className="text-deep-teal">*</span>
           </label>
           <input
             id="company"
@@ -96,10 +99,10 @@ export function SerenNudgeRequestAccessForm() {
         </div>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-charcoal">
-            Company email <span className="text-coral">*</span>
+            Company email <span className="text-deep-teal">*</span>
           </label>
           <input
             id="email"
@@ -145,15 +148,9 @@ export function SerenNudgeRequestAccessForm() {
 
       <div>
         <label htmlFor="about" className="mb-1.5 block text-sm font-medium text-charcoal">
-          What is this about? <span className="text-coral">*</span>
+          What is this about? <span className="text-deep-teal">*</span>
         </label>
-        <select
-          id="about"
-          name="about"
-          required
-          className={inputClassName}
-          defaultValue=""
-        >
+        <select id="about" name="about" required className={inputClassName} defaultValue="">
           <option value="" disabled>
             Select an option
           </option>
@@ -168,14 +165,14 @@ export function SerenNudgeRequestAccessForm() {
       <div>
         <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-charcoal">
           Tell us briefly about your business or testing use case{" "}
-          <span className="text-coral">*</span>
+          <span className="text-deep-teal">*</span>
         </label>
         <textarea
           id="message"
           name="message"
           required
           rows={5}
-          className="w-full resize-y rounded-xl border border-border bg-surface px-4 py-3 text-sm text-charcoal placeholder:text-muted-light focus:border-coral focus:outline-none focus:ring-2 focus:ring-coral/20"
+          className={`${inputClassName} resize-y`}
           placeholder="Example: We want to test QR request tracking and ready-for-pickup alerts during busy service periods."
         />
         <p className="mt-1.5 text-xs text-muted-light">
@@ -186,7 +183,7 @@ export function SerenNudgeRequestAccessForm() {
 
       <button
         type="submit"
-        className="inline-flex w-full items-center justify-center rounded-full bg-coral px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-coral-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 sm:w-auto"
+        className="inline-flex w-full items-center justify-center rounded-full bg-deep-teal px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition-all duration-200 hover:bg-coral-hover hover:shadow-lift focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal focus-visible:ring-offset-2 sm:w-auto"
       >
         Submit request
       </button>

@@ -82,14 +82,14 @@ export function ProductScreenshotCarousel({
             data-carousel-card
             className="w-[78vw] shrink-0 snap-center sm:w-[360px] lg:w-[340px]"
           >
-            <div className="overflow-hidden rounded-[1.75rem] border border-border bg-surface p-2 shadow-[0_8px_30px_rgba(28,28,30,0.08)] sm:rounded-[2rem] sm:p-2.5">
+            <div className="overflow-hidden rounded-[1.75rem] border border-border bg-surface p-2 shadow-soft sm:rounded-[2rem] sm:p-2.5">
               <div className="relative aspect-[9/19] overflow-hidden rounded-[1.25rem] bg-background sm:rounded-[1.5rem]">
                 <Image
                   src={shot.src}
                   alt={shot.alt}
                   fill
                   sizes="(min-width: 1024px) 340px, (min-width: 640px) 360px, 78vw"
-                  className="object-contain"
+                  className="object-contain object-top"
                   priority={index === 0}
                 />
               </div>

@@ -25,67 +25,89 @@ const testingSteps = [
 
 export default function SerenNudgeRequestAccessPage() {
   return (
-    <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-      <header className="max-w-2xl">
-        <p className="text-sm font-semibold uppercase tracking-widest text-accent-teal">
-          Seren Nudge · Controlled testing
-        </p>
-        <h1 className="mt-3 text-3xl font-semibold tracking-tight text-charcoal sm:text-4xl">
-          Request access to Seren Nudge
-        </h1>
-        <p className="mt-4 text-lg leading-relaxed text-muted">
-          Seren Nudge is currently available for controlled testing. Share your details and
-          we&apos;ll follow up with access instructions.
-        </p>
-        <p className="mt-4 leading-relaxed text-muted">
-          Complete the form below so we can understand who you are, where you&apos;ll be testing
-          Seren Nudge, and how best to support your setup.
-        </p>
-      </header>
+    <div className="relative overflow-hidden">
+      <div
+        className="pointer-events-none absolute inset-x-0 top-0 h-72 bg-[radial-gradient(ellipse_at_top,_var(--teal-soft),_transparent_65%)]"
+        aria-hidden="true"
+      />
 
-      <div className="mt-12 grid gap-10 lg:grid-cols-5 lg:gap-12">
-        <aside className="space-y-6 lg:col-span-2">
-          <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
-            <h2 className="text-lg font-semibold text-charcoal">How testing access works</h2>
-            <ol className="mt-5 space-y-4">
-              {testingSteps.map((step, index) => (
-                <li key={step} className="flex gap-3 text-sm leading-relaxed text-muted">
-                  <span
-                    className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-soft text-xs font-semibold text-accent-teal"
-                    aria-hidden="true"
-                  >
-                    {index + 1}
-                  </span>
-                  <span>{step}</span>
-                </li>
-              ))}
-            </ol>
-            <p className="mt-6 rounded-xl border border-border bg-background px-4 py-3 text-xs leading-relaxed text-muted-light">
-              Access is currently limited while Seren Nudge is being tested and refined.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-border bg-background p-6 sm:p-8">
-            <h2 className="text-sm font-semibold text-charcoal">Password guidance</h2>
-            <p className="mt-3 text-sm leading-relaxed text-muted">
-              During registration, create a secure password with at least 8 characters. Use a mix of
-              letters and numbers. If the app asks for additional requirements, follow the on-screen
-              password instructions.
-            </p>
-          </div>
-
-          <p className="text-sm text-muted">
-            Prefer a general enquiry?{" "}
-            <Link href="/contact" className="font-medium text-coral hover:underline">
-              Contact Seren Tech
-            </Link>
+      <div className="relative mx-auto max-w-6xl section-pad">
+        <header className="max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-deep-teal">
+            Seren Nudge · Controlled testing
           </p>
-        </aside>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-charcoal sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
+            Request access to Seren Nudge
+          </h1>
+          <p className="mt-4 text-lg leading-relaxed text-muted">
+            Seren Nudge is currently available for controlled testing. Share your details and
+            we&apos;ll follow up with access instructions.
+          </p>
+          <p className="mt-4 leading-relaxed text-muted">
+            Complete the form below so we can understand who you are, where you&apos;ll be testing
+            Seren Nudge, and how best to support your setup.
+          </p>
+        </header>
 
-        <div className="lg:col-span-3">
-          <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
-            <h2 className="mb-6 text-xl font-semibold text-charcoal">Access request form</h2>
-            <SerenNudgeRequestAccessForm />
+        <div className="mt-12 grid gap-8 lg:grid-cols-5 lg:gap-10">
+          <aside className="flex flex-col gap-5 lg:col-span-2">
+            <div className="rounded-2xl border border-border bg-surface p-6 shadow-soft sm:p-8">
+              <h2 className="text-lg font-semibold text-charcoal">How testing access works</h2>
+              <ol className="mt-5 flex flex-col gap-4">
+                {testingSteps.map((step, index) => (
+                  <li key={step} className="flex gap-3 text-sm leading-relaxed text-muted">
+                    <span
+                      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-teal-soft text-xs font-semibold text-deep-teal"
+                      aria-hidden="true"
+                    >
+                      {index + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+              <p className="mt-6 rounded-xl border border-border bg-background px-4 py-3 text-xs leading-relaxed text-muted-light">
+                Access is currently limited while Seren Nudge is being tested and refined.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-background p-6 sm:p-8">
+              <h2 className="text-sm font-semibold text-charcoal">Password guidance</h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted">
+                During registration, create a secure password with at least 8 characters. Use a mix
+                of letters and numbers. If the app asks for additional requirements, follow the
+                on-screen password instructions.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-accent-teal/25 bg-teal-soft/60 p-5 sm:p-6">
+              <h2 className="text-sm font-semibold text-deep-teal">iPhone / TestFlight</h2>
+              <p className="mt-2 text-sm leading-relaxed text-muted">
+                If you&apos;re testing on iPhone, install Apple TestFlight before opening the invite
+                link from your access email.
+              </p>
+            </div>
+
+            <p className="text-sm text-muted">
+              Prefer a general enquiry?{" "}
+              <Link
+                href="/contact"
+                className="font-medium text-deep-teal underline-offset-2 hover:underline"
+              >
+                Contact Seren Tech
+              </Link>
+            </p>
+          </aside>
+
+          <div className="lg:col-span-3">
+            <div className="rounded-2xl border border-border bg-surface p-6 shadow-soft sm:p-8 lg:p-10">
+              <h2 className="mb-2 text-xl font-semibold text-charcoal">Access request form</h2>
+              <p className="mb-8 text-sm leading-relaxed text-muted">
+                We review every request personally. Approved testers receive setup instructions by
+                email.
+              </p>
+              <SerenNudgeRequestAccessForm />
+            </div>
           </div>
         </div>
       </div>

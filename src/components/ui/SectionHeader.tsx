@@ -21,8 +21,8 @@ export function SectionHeader({
     <div className={`max-w-2xl ${alignClass}`}>
       {eyebrow && (
         <p
-          className={`mb-3 text-sm font-semibold uppercase tracking-widest ${
-            light ? "text-gold" : "text-accent-teal"
+          className={`mb-3 text-sm font-semibold uppercase tracking-[0.14em] ${
+            light ? "text-accent-teal" : "text-deep-teal"
           }`}
         >
           {eyebrow}
@@ -39,7 +39,7 @@ export function SectionHeader({
       {description && (
         <p
           className={`mt-4 text-lg leading-relaxed ${
-            light ? "text-white/70" : "text-muted"
+            light ? "text-white/65" : "text-muted"
           }`}
         >
           {description}

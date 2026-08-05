@@ -24,17 +24,19 @@ export default function ContactPage() {
         description="Interested in testing Seren Nudge or speaking to Seren Tech about an operational workflow? Send us a message."
       />
 
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
-        <div className="grid gap-12 lg:grid-cols-5">
+      <section className="mx-auto max-w-6xl section-pad">
+        <div className="grid gap-10 lg:grid-cols-5 lg:gap-12">
           <div className="lg:col-span-3">
-            <h2 className="mb-6 text-xl font-semibold text-charcoal">Send us a message</h2>
-            <ContactForm />
+            <div className="rounded-2xl border border-border bg-surface p-6 shadow-soft sm:p-8">
+              <h2 className="mb-6 text-xl font-semibold text-charcoal">Send us a message</h2>
+              <ContactForm />
+            </div>
           </div>
 
-          <aside className="lg:col-span-2">
-            <div className="rounded-2xl border border-border bg-surface p-8">
+          <aside className="flex flex-col gap-5 lg:col-span-2">
+            <div className="rounded-2xl border border-border bg-surface p-6 shadow-soft sm:p-8">
               <h2 className="text-lg font-semibold text-charcoal">Contact details</h2>
-              <dl className="mt-6 space-y-5 text-sm">
+              <dl className="mt-6 flex flex-col gap-5 text-sm">
                 <div>
                   <dt className="font-medium text-muted-light">Company</dt>
                   <dd className="mt-1 text-charcoal">{siteConfig.legalName}</dd>
@@ -44,7 +46,7 @@ export default function ContactPage() {
                   <dd className="mt-1">
                     <a
                       href={`mailto:${siteConfig.email}`}
-                      className="font-medium text-coral transition-colors hover:text-coral-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral"
+                      className="font-medium text-deep-teal transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal"
                     >
                       {siteConfig.email}
                     </a>
@@ -55,7 +57,7 @@ export default function ContactPage() {
                   <dd className="mt-1">
                     <a
                       href={siteConfig.url}
-                      className="font-medium text-coral transition-colors hover:text-coral-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral"
+                      className="font-medium text-deep-teal transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal"
                     >
                       www.serentech.co.za
                     </a>
@@ -64,7 +66,7 @@ export default function ContactPage() {
               </dl>
             </div>
 
-            <div className="mt-6 rounded-2xl border border-border bg-background p-8">
+            <div className="rounded-2xl border border-border bg-background p-6 sm:p-8">
               <h3 className="font-semibold text-charcoal">Testing Seren Nudge?</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">
                 For controlled testing access, use the dedicated request form — we&apos;ll follow
@@ -72,13 +74,13 @@ export default function ContactPage() {
               </p>
               <Link
                 href="/seren-nudge/request-access"
-                className="mt-4 inline-flex text-sm font-semibold text-coral transition-colors hover:text-coral-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral"
+                className="mt-4 inline-flex text-sm font-semibold text-deep-teal transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal"
               >
                 Request access to Seren Nudge &rarr;
               </Link>
             </div>
 
-            <div className="mt-6 rounded-2xl border border-border bg-background p-8">
+            <div className="rounded-2xl border border-border bg-background p-6 sm:p-8">
               <h3 className="font-semibold text-charcoal">{whoWeWorkWith.title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-muted">
                 {whoWeWorkWith.description}
