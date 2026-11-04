@@ -67,6 +67,7 @@ export const footerProductLinks = [
 export const footerLegalLinks = [
   { href: "/legal/privacy-policy", label: "Privacy Policy" },
   { href: "/legal/terms-of-service", label: "Terms of Use" },
+  { href: "/legal/account-deletion", label: "Delete account" },
 ] as const;
 
 /** @deprecated Prefer howWeThink — kept for any residual imports */
