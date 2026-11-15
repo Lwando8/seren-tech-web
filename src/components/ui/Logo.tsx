@@ -39,7 +39,7 @@ export function Logo({
           alt={`${siteConfig.name} logo`}
           width={512}
           height={512}
-          className={`${sizeClass} bg-transparent`}
+          className={`${sizeClass} bg-transparent [filter:drop-shadow(0_1px_2px_rgba(7,17,17,0.12))_drop-shadow(0_4px_10px_rgba(7,17,17,0.14))]`}
           priority={priority}
         />
       ) : variant === "dark" ? (
@@ -58,7 +58,7 @@ export function Logo({
             alt={`${siteConfig.name} logo`}
             width={512}
             height={512}
-            className={`${sizeClass} bg-transparent dark:hidden`}
+            className={`${sizeClass} bg-transparent [filter:drop-shadow(0_1px_2px_rgba(7,17,17,0.12))_drop-shadow(0_4px_10px_rgba(7,17,17,0.14))] dark:hidden`}
             priority={priority}
           />
           <Image
