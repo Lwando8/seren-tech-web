@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: "/images/logo-light.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Seren Tech logo",
@@ -51,15 +51,19 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description: siteConfig.description,
-    images: ["/images/logo-light.png"],
+    images: ["/images/og-image.png"],
   },
   robots: {
     index: true,
     follow: true,
   },
   icons: {
-    icon: "/images/logo-light.png",
-    apple: "/images/logo-light.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/images/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/images/favicon-16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/images/apple-touch-icon.png",
   },
 };
 

@@ -37,8 +37,8 @@ export function Logo({
         <Image
           src="/images/logo-light.png"
           alt={`${siteConfig.name} logo`}
-          width={536}
-          height={713}
+          width={512}
+          height={512}
           className={`${sizeClass} bg-transparent`}
           priority={priority}
         />
@@ -46,8 +46,8 @@ export function Logo({
         <Image
           src="/images/logo-dark.png"
           alt={`${siteConfig.name} logo`}
-          width={536}
-          height={713}
+          width={512}
+          height={512}
           className={`${sizeClass} bg-transparent`}
           priority={priority}
         />
@@ -56,16 +56,16 @@ export function Logo({
           <Image
             src="/images/logo-light.png"
             alt={`${siteConfig.name} logo`}
-            width={536}
-            height={713}
+            width={512}
+            height={512}
             className={`${sizeClass} bg-transparent dark:hidden`}
             priority={priority}
           />
           <Image
             src="/images/logo-dark.png"
             alt=""
-            width={536}
-            height={713}
+            width={512}
+            height={512}
             className={`${sizeClass} hidden bg-transparent dark:block`}
             aria-hidden
             priority={priority}
