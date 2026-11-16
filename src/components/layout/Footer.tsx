@@ -12,8 +12,7 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border bg-ink pb-28 text-white">
-      {/* Extra top padding so the footer wordmark clears the sticky header when scrolled into view */}
-      <div className="mx-auto max-w-6xl px-5 pb-16 pt-24 sm:px-8 sm:pb-20 sm:pt-28">
+      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Logo variant="dark" size="footer" className="mb-5" />

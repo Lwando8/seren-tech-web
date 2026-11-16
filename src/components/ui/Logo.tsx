@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 type LogoProps = {
   /** Force a specific asset. Omit to follow light/dark theme via CSS. */
   variant?: "light" | "dark" | "auto";
+  /** header = full horizontal wordmark; footer = icon-only ribbon mark */
   size?: "header" | "footer";
   className?: string;
   priority?: boolean;
@@ -13,11 +14,15 @@ type LogoProps = {
 
 /** Horizontal wordmark — light: navy SEREN / teal TECH; dark: white SEREN / teal TECH. */
 const wordmarkDims = { width: 1144, height: 320 } as const;
+/** Icon-only ribbon S (Nov 16 mark), transparent. */
+const markDims = { width: 512, height: 512 } as const;
 
-const sizeClasses = {
+const wordmarkSizeClasses = {
   header: "h-9 w-auto sm:h-10",
-  /** Keep footer ≤ header so sticky header + footer never read as twin stacked wordmarks. */
-  footer: "h-8 w-auto sm:h-9",
+} as const;
+
+const markSizeClasses = {
+  footer: "h-10 w-auto sm:h-11",
 } as const;
 
 export function Logo({
@@ -26,7 +31,7 @@ export function Logo({
   className = "",
   priority = false,
 }: LogoProps) {
-  const sizeClass = sizeClasses[size];
+  const isMark = size === "footer";
 
   return (
     <Link
@@ -37,13 +42,22 @@ export function Logo({
       )}
       aria-label={`${siteConfig.name} home`}
     >
-      {variant === "light" ? (
+      {isMark ? (
+        <Image
+          src="/images/logo-mark.png"
+          alt={`${siteConfig.name} logo`}
+          width={markDims.width}
+          height={markDims.height}
+          className={`${markSizeClasses.footer} bg-transparent`}
+          priority={priority}
+        />
+      ) : variant === "light" ? (
         <Image
           src="/images/logo-light.png"
           alt={`${siteConfig.name} logo`}
           width={wordmarkDims.width}
           height={wordmarkDims.height}
-          className={`${sizeClass} bg-transparent`}
+          className={`${wordmarkSizeClasses.header} bg-transparent`}
           priority={priority}
         />
       ) : variant === "dark" ? (
@@ -52,7 +66,7 @@ export function Logo({
           alt={`${siteConfig.name} logo`}
           width={wordmarkDims.width}
           height={wordmarkDims.height}
-          className={`${sizeClass} bg-transparent`}
+          className={`${wordmarkSizeClasses.header} bg-transparent`}
           priority={priority}
         />
       ) : (
@@ -62,7 +76,7 @@ export function Logo({
             alt={`${siteConfig.name} logo`}
             width={wordmarkDims.width}
             height={wordmarkDims.height}
-            className={`${sizeClass} bg-transparent dark:hidden`}
+            className={`${wordmarkSizeClasses.header} bg-transparent dark:hidden`}
             priority={priority}
           />
           <Image
@@ -70,7 +84,7 @@ export function Logo({
             alt=""
             width={wordmarkDims.width}
             height={wordmarkDims.height}
-            className={`${sizeClass} hidden bg-transparent dark:block`}
+            className={`${wordmarkSizeClasses.header} hidden bg-transparent dark:block`}
             aria-hidden
             priority={priority}
           />
