@@ -11,19 +11,12 @@ type LogoProps = {
   priority?: boolean;
 };
 
-/** Horizontal wordmark (Nov 16) — navy SEREN / teal TECH; for light backgrounds. */
-const lightDims = { width: 1144, height: 320 } as const;
-/** Transparent white+teal mark cutout — readable on dark backgrounds / footer. */
-const darkDims = { width: 512, height: 512 } as const;
+/** Horizontal wordmark — light: navy SEREN / teal TECH; dark: white SEREN / teal TECH. */
+const wordmarkDims = { width: 1144, height: 320 } as const;
 
-const lightSizeClasses = {
+const sizeClasses = {
   header: "h-9 w-auto sm:h-10",
   footer: "h-11 w-auto sm:h-12",
-} as const;
-
-const darkSizeClasses = {
-  header: "h-12 w-auto sm:h-14",
-  footer: "h-14 w-auto sm:h-16",
 } as const;
 
 export function Logo({
@@ -32,8 +25,7 @@ export function Logo({
   className = "",
   priority = false,
 }: LogoProps) {
-  const lightSize = lightSizeClasses[size];
-  const darkSize = darkSizeClasses[size];
+  const sizeClass = sizeClasses[size];
 
   return (
     <Link
@@ -48,18 +40,18 @@ export function Logo({
         <Image
           src="/images/logo-light.png"
           alt={`${siteConfig.name} logo`}
-          width={lightDims.width}
-          height={lightDims.height}
-          className={`${lightSize} bg-transparent`}
+          width={wordmarkDims.width}
+          height={wordmarkDims.height}
+          className={`${sizeClass} bg-transparent`}
           priority={priority}
         />
       ) : variant === "dark" ? (
         <Image
           src="/images/logo-dark.png"
           alt={`${siteConfig.name} logo`}
-          width={darkDims.width}
-          height={darkDims.height}
-          className={`${darkSize} bg-transparent`}
+          width={wordmarkDims.width}
+          height={wordmarkDims.height}
+          className={`${sizeClass} bg-transparent`}
           priority={priority}
         />
       ) : (
@@ -67,17 +59,17 @@ export function Logo({
           <Image
             src="/images/logo-light.png"
             alt={`${siteConfig.name} logo`}
-            width={lightDims.width}
-            height={lightDims.height}
-            className={`${lightSize} bg-transparent dark:hidden`}
+            width={wordmarkDims.width}
+            height={wordmarkDims.height}
+            className={`${sizeClass} bg-transparent dark:hidden`}
             priority={priority}
           />
           <Image
             src="/images/logo-dark.png"
             alt=""
-            width={darkDims.width}
-            height={darkDims.height}
-            className={`${darkSize} hidden bg-transparent dark:block`}
+            width={wordmarkDims.width}
+            height={wordmarkDims.height}
+            className={`${sizeClass} hidden bg-transparent dark:block`}
             aria-hidden
             priority={priority}
           />
