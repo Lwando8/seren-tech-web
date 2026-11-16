@@ -11,25 +11,28 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-ink pb-28 text-white">
-      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <footer className="relative border-t border-border bg-background text-charcoal dark:bg-ink dark:text-white">
+      {/* Clear floating bottom nav; keep content readable behind it on mobile */}
+      <div className="mx-auto max-w-6xl px-5 pb-32 pt-12 sm:px-8 sm:pb-28 sm:pt-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
-            <Logo variant="dark" size="footer" className="mb-5" />
-            <p className="max-w-sm text-sm leading-relaxed text-white/65">
+            <Logo size="footer" className="mb-5" />
+            <p className="max-w-sm text-sm leading-relaxed text-muted dark:text-white/65">
               {siteConfig.description}
             </p>
-            <dl className="mt-8 space-y-2 text-sm text-white/70">
+            <dl className="mt-8 space-y-2 text-sm text-muted dark:text-white/70">
               <div>
                 <dt className="sr-only">Company</dt>
-                <dd className="font-medium text-white/90">{siteConfig.legalName}</dd>
+                <dd className="font-medium text-charcoal dark:text-white/90">
+                  {siteConfig.legalName}
+                </dd>
               </div>
               <div>
                 <dt className="sr-only">Email</dt>
                 <dd>
                   <a
                     href={`mailto:${siteConfig.email}`}
-                    className="transition-colors hover:text-accent-teal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal"
+                    className="transition-colors hover:text-deep-teal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal dark:hover:text-accent-teal"
                   >
                     {siteConfig.email}
                   </a>
@@ -40,7 +43,7 @@ export function Footer() {
                 <dd>
                   <a
                     href={siteConfig.url}
-                    className="transition-colors hover:text-accent-teal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal"
+                    className="transition-colors hover:text-deep-teal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal dark:hover:text-accent-teal"
                   >
                     www.serentech.co.za
                   </a>
@@ -50,7 +53,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/45">
+            <h2 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted-light dark:text-white/45">
               Navigate
             </h2>
             <ul className="flex flex-col gap-2.5">
@@ -58,7 +61,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/75 transition-colors hover:text-accent-teal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal"
+                    className="text-sm text-muted transition-colors hover:text-deep-teal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal dark:text-white/75 dark:hover:text-accent-teal"
                   >
                     {link.label}
                   </Link>
@@ -68,7 +71,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/45">
+            <h2 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted-light dark:text-white/45">
               Product
             </h2>
             <ul className="flex flex-col gap-2.5">
@@ -76,7 +79,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/75 transition-colors hover:text-accent-teal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal"
+                    className="text-sm text-muted transition-colors hover:text-deep-teal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal dark:text-white/75 dark:hover:text-accent-teal"
                   >
                     {link.label}
                   </Link>
@@ -86,7 +89,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-white/45">
+            <h2 className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-muted-light dark:text-white/45">
               Legal
             </h2>
             <ul className="flex flex-col gap-2.5">
@@ -94,7 +97,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-white/75 transition-colors hover:text-accent-teal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal"
+                    className="text-sm text-muted transition-colors hover:text-deep-teal focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-teal dark:text-white/75 dark:hover:text-accent-teal"
                   >
                     {link.label}
                   </Link>
@@ -104,19 +107,19 @@ export function Footer() {
             <div className="mt-6 flex flex-col gap-2">
               <Link
                 href="/legal/acceptable-use-policy"
-                className="text-xs text-white/45 transition-colors hover:text-accent-teal"
+                className="text-xs text-muted-light transition-colors hover:text-deep-teal dark:text-white/45 dark:hover:text-accent-teal"
               >
                 Acceptable Use
               </Link>
               <Link
                 href="/pricing"
-                className="text-xs text-white/45 transition-colors hover:text-accent-teal"
+                className="text-xs text-muted-light transition-colors hover:text-deep-teal dark:text-white/45 dark:hover:text-accent-teal"
               >
                 Pricing
               </Link>
               <Link
                 href="/compliance/merchant-compliance-pack"
-                className="text-xs text-white/45 transition-colors hover:text-accent-teal"
+                className="text-xs text-muted-light transition-colors hover:text-deep-teal dark:text-white/45 dark:hover:text-accent-teal"
               >
                 Merchant Compliance
               </Link>
@@ -124,13 +127,19 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-white/45">
+        <div className="mt-14 flex flex-col gap-3 border-t border-border pt-8 sm:flex-row sm:items-center sm:justify-between dark:border-white/10">
+          <p className="text-sm text-muted-light dark:text-white/45">
             &copy; {year} {siteConfig.legalName}. All rights reserved.
           </p>
-          <p className="text-sm text-white/40">South Africa</p>
+          <p className="text-sm text-muted-light dark:text-white/40">South Africa</p>
         </div>
       </div>
+
+      {/* Soft fade behind floating bottom menu so legal/copyright stay readable */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-28 bg-gradient-to-t from-background via-background/85 to-transparent dark:from-ink dark:via-ink/85"
+        aria-hidden
+      />
     </footer>
   );
 }
