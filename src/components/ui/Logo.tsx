@@ -16,7 +16,8 @@ const wordmarkDims = { width: 1144, height: 320 } as const;
 
 const sizeClasses = {
   header: "h-9 w-auto sm:h-10",
-  footer: "h-11 w-auto sm:h-12",
+  /** Keep footer ≤ header so sticky header + footer never read as twin stacked wordmarks. */
+  footer: "h-8 w-auto sm:h-9",
 } as const;
 
 export function Logo({
