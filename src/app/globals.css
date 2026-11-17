@@ -219,3 +219,21 @@ body {
     @apply transition-all duration-200 ease-out hover:-translate-y-0.5 hover:shadow-lift;
   }
 }
+
+/* Last block before footer: keep section top rhythm, drop the tall empty band under the card */
+main > :last-child.section-pad,
+main > :last-child .section-pad {
+  padding-bottom: 2rem; /* pb-8 */
+}
+@media (min-width: 640px) {
+  main > :last-child.section-pad,
+  main > :last-child .section-pad {
+    padding-bottom: 2.5rem; /* pb-10 */
+  }
+}
+@media (min-width: 1024px) {
+  main > :last-child.section-pad,
+  main > :last-child .section-pad {
+    padding-bottom: 3rem; /* pb-12 */
+  }
+}
